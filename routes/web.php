@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 #Rutas para mostrar todos los registros
-Route::get('producto', [ProductoController::class, 'index'])->name('producto.index');
+Route::get('producto', [ProductoController::class, 'index'])->name('producto.index')->middleware('auth');
 #Rutas para crear
 Route::get('producto/create', [ProductoController::class, 'create'])->name('producto.create');
 Route::post('producto/store', [ProductoController::class, 'store'])->name('producto.store');
